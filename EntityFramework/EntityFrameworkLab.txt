@@ -1,0 +1,58 @@
+This lab will teach you the Entity Framework (EF) basics while creating a console application.
+
+- Create a new console application.
+- Add the NuGet package Microsoft.EntityFrameworkCore.Sqlite. This will install Sqlite support for EF but also entity framework itself which depends on it.
+- Add the NuGet package Microsoft.EntityFramework.Design. This adds the support for the EF tooling.
+- Open a terminal (located in the View menu) and run the following command: dotnet tool install -g dotnet-ef
+- This will install the tooling we'll need.
+
+- Create a folder in the project called Database
+- Add a class PersonDbContext to it which derives from DbContext.
+- override the OnConfiguring method.
+- Add this line of code to OnConfiguring: optionsBuilder.UseSqlite("Data Source=./PersonDatabase.db");
+- Create another class Person in the database folder with the properties Id, Name and City.
+- Go back to PersonDbContext and add a db set property for Person: public DbSet<Person> Persons => Set<Person>();
+- At the terminal type: dotnet ef migrations add initial.
+- Examine the generated code.
+
+- In program.cs, add the following code:
+
+using var context = new PersonDbContext();
+context.Database.EnsureDeleted();
+context.Database.EnsureCreated();
+var person = new Person
+{
+    Name = "John",
+    City = "London"
+};
+context.Persons.Add(person);
+context.SaveChanges();
+
+foreach (var currentPerson in context.Persons)
+{
+    Console.WriteLine($"{currentPerson.Name} from {currentPerson.City} is in the database!");
+}
+
+- Be sure you understand this code. if not, ask Roland.
+- Run the application and see if it works.
+
+- Download the "Browser for SQL lite" from https://sqlitebrowser.org
+- Open the database file with the tool. It should be in the bin/debug folder.
+- Examine the database that was created with the tool.
+
+- Add a class Pet to the database folder:
+
+    internal class Pet
+    {
+        public int Id { get; set; }
+        public int PersonId { get; set; }
+        public Person? Person { get; set; }
+        public string Name { get; set; } = "Unknown";
+        public int Age { get; set; }
+    }
+
+- Add a DbSet for it in PersonDbContext.
+- Add a migration called "Pets".
+- Adjust the program to also add a pet for a person and display it.
+
+- Rexamine the database with Browser for SqlLite.

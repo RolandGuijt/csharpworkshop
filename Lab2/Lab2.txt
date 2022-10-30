@@ -1,0 +1,7 @@
+Lab 2
+
+1. Enhance the application from lab 2: Instead of revealing the correct number after the first guess, give the user another go until the correct number is guessed.
+
+2. Show the number of guesses it took after the number was guessed.
+
+3. If time allows: Limit the number of guesses to 3. When the game is over, show if there's a winning condition or not together with a summary of the numbers that the user tried.

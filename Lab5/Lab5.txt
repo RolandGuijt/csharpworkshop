@@ -1,0 +1,12 @@
+Lab 5
+
+Add inheritance to Snakes and Ladders.
+
+- Modify the Square class so that it just contains the property that represents the square number.
+- Create a class SpecialSquare that derives from Square containing a string property Message and an int property Modifier.
+- Create the SnakeSquare and LadderSquare classes that derive from SpecialSquare. They should override the Modifier and Message properties.
+- Modify the game class to make it work with this new structure.
+
+Hints:
+- The methods that create the ladders and snakes now should instantiate SnakeSquare/LadderSquare objects.
+- To determine if a snake or ladder square is reached, the game should use the "is" operator to see if the current position square is a SpecialSquare.
