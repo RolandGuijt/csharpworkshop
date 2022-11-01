@@ -1,0 +1,18 @@
+We're creating the software for Elon's new rocket project.
+
+- Create a new console application
+- Add a struct called Rocket in a new file
+- Create 3 private fields: A boolean _Launched which should be intially false, _Landed, also false and _LaunchedTime of the type DateTime.
+- Create a constructor that initialized _LaunchedTime to DateTime.MinValue.
+- Add a private property called MissionDuration of the type TimeSpan that has a getter that returns the result of the substraction of DateTime.Now and _LaunchedTime. Note that substracting two DateTime structs results in a TimeSpan. 
+
+- Add an enum in a seperate file called RocketStatus. Possible statusses are NotLaunched, TakingOff, Orbit and Landed.
+
+- In Rocket create a property called Status of the type RocketStatus. Return the correct enum value if _Launched is false, _Landed is true and when the mission duration is less than 10 seconds (use the TotalSeconds property on the TimeSpan) the status should be TakingOff, when it's larger, Orbit.
+
+- Create two methods: one called Launch that sets _Launched to true and sets _LaunchedTime to DateTime.Now. And one called Land that sets _Landed to true.
+
+- Take a step back and be sure you understand how the Rocket enum works.
+
+- In program.cs create a new rocket and launch it when a key is pressed. Then users should be able to press a key to see the status of the rocket and press q to quit and l to land.
+- Create an infinite loop that makes this happen.
