@@ -1,0 +1,23 @@
+Lab 6
+
+To learn interfaces and polymorphism we are creating a class that can launch objects. Anything launchable really: we'll start with a Rocket and a Career :-)
+
+- Create a new console project.
+- Add an interface ILaunchable. Add a string property NameOfLaunchable with just a getter. And an int property MissionDurationInHours also with just a getter.
+- Add a void method Launch without parameters.
+- Create a new folder Launchables in the project and add a new Career class.
+- Add a private bool field: _Launched.
+- Implement the interface setting _Launched to true when the Launch method is called.
+- Return "Rocket" in the getter for NameOfLaunchable and some number in the getter of MissionDurationInHours.
+- Add a new class career in the Launchables folder.
+- Add a private field _YourName and add a constructor that accepts the name and sets it.
+- Add a private field _CareerStarted.
+- Implement the interface. For NameOfLaunchable, return a string that includes the _YourName. $"The career of {_YourName}" e.g.
+- In Launch, set _CareerStarted.
+- Return a some number for MissionDurationInHours
+
+- Create a class LaunchEngine that has a private field, a List<ILaunchable>.
+- Add a method QueueLaunchable that accepts a ILaunchable
+- Add a method LaunchAll that launches all rockets and returns the total mission duration of all launchables.
+
+- In program.cs create a user interface that can queue both launchables notifying the user that the launchable has been queued (using NameOfLaunchable). After the queuing is done, all launchables should be launched, displaying the total duration.
