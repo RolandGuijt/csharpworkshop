@@ -24,7 +24,7 @@
 
                 Console.WriteLine($"You rolled a {dieRoll}. That gets you to square {newPosition}.");
 
-                if (newPosition >= 100)
+                if (newPosition + dieRoll >= 100)
                     break;
 
                 _CurrentSquare = _Squares[newPosition - 1];

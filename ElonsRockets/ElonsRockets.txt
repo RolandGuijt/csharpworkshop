@@ -12,7 +12,7 @@ We're creating the software for Elon's new rocket project.
 
 - Create two methods: one called Launch that sets _Launched to true and sets _LaunchedTime to DateTime.Now. And one called Land that sets _Landed to true.
 
-- Take a step back and be sure you understand how the Rocket enum works.
+- Take a step back and be sure you understand how the code works.
 
 - In program.cs create a new rocket and launch it when a key is pressed. Then users should be able to press a key to see the status of the rocket and press q to quit and l to land.
 - Create an infinite loop that makes this happen.

@@ -2,9 +2,9 @@ Lab 4
 
 Create an object oriented version of Snakes and Ladders.
 
-- Create a class representing a square. It should have a number property, a modifier property and properties that designate it as a snake or ladder.
+- Create a class representing a square. It should have a number property, a modifier property and the bool properties that designate it as a snake or ladder. (IsSnake, IsLadder e.g.)
 - Create a game class that will contain the game engine. Add a start method that runs the game.
-- Instead of using an array with numbers, now use an array with square objects. Fill the array in a separate method and in two other methods, determine which squares are snakes and ladders with which modifiers.
-- Instead of keeping the current position in an integer, now use a Square instance.
+- Instead of using an array with numbers, now use an array with square objects. Instatiate all Square object in the array in a separate method with a for loop and in two other methods, determine which squares are snakes and ladders (by setting IsSnake or IsLadder e.g.) with which modifiers.
+- Instead of keeping the current position in an integer, now use a Square instance and use the properties on it to determine if a snake or ladder was reached. If so, use the modifier property to apply the bonus/penalty.
 
 - Instantiate the game class in program.cs and call the start method. When start completes, show the number of turns it took when the game finishes.
