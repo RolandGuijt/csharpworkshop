@@ -1,0 +1,13 @@
+Practicing Exception Throws
+
+- Create a class Person with an Age property
+- A valid age is in the range 0-100.
+- If an invalid age is set, throw an ArgumentOutOfRangeException (in the System namespace)
+- Create an instance of the class and set an invalid age
+- Observe what happens when you run
+- Catch the exception
+
+- Create a new class AgeOutOfRangeException. Derive from ArgumentOutOfRangeException
+- Throw the new exception instead in the Person class
+- Observe the effects with and without the catch.
+- What could be a benefit of using the derived class instead of the more generic one?

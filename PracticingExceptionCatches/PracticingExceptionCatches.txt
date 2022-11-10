@@ -1,0 +1,45 @@
+Practicing Exception Catches
+
+- Create a new console application
+- Create a class with some properties
+- In program.cs create an instance of it and set a property value (e.g. Customer customer = new Customer())
+- Use a Console.WriteLine to display the new property value
+- As the last line put in a Console.ReadKey() so that the program waits for a key press.
+- Run the program to check if it works
+- Now in the line that instantiates a Customer, don't use new Customer but instead assign null to the variable. (e.g. Customer customer = null)
+- Run the program again. Observe what Visual Studio does. An unhandled exception of NullReferenceException occurs, maybe the exception that is the most commonly encountered in any application.
+- Visual Studio is now in debug mode, the same mode that is used when a breakpoint is encountered. You can now inspect the variable of the class type for instance by hovering over it with your mouse to find out that it is indeed null.
+- In the toolbar in the upper part of the screen the green "play button" now is showing continue. Press continue (you might have to press it twice) until the program continues.
+- Note that the program immediately quits and doesn't wait for a key press. Why is that?
+
+- Now put a try/catch block around the line that changes the property value. And in the catch output a user message.
+
+For example:
+
+try
+{
+	customer.Name = "Alice";
+}
+catch
+{
+	Console.Writeline("Couldn't assign a customer name");
+}
+
+- Run the program again and see what happens. Be sure you get it. If not ask Roland.
+- Change the line where the class variable is declared back to assigning an instance again: (e.g. Customer customer = new Customer())
+- Run and observe
+
+- Create a method in the class called Calculate that takes two ints and returns the division (/ is the division operator)
+- Call the method in the try block in addition to the line that assigns the property value, passing in 10 and 0.
+- Run the application and see what happens. Is this correct behaviour?
+- The problem is that "catch" catches all exceptions, we have to be more specific.
+- Change the line with catch to: catch (NullReferenceException ex)
+- If you want you can access the exception's details (such as message) using the ex variable.
+- Run again and observe that now the DivisionByZero exception surfaces because that is not catched.
+- Add a catch block for it.
+- Note that the exception occurs in the method but we're catching it in the code that calls the method. That works because of exception propagation.
+
+More advanced experiment:
+- Find out the base class for any of the two exceptions (by pressing F12 while the cursor is on the Exception name) and catch the base type with a Console.WriteLine in addition to the derived type (more specific first).
+- Run and experiment. Ask if unclear.
+
