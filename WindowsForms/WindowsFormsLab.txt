@@ -3,7 +3,7 @@ Windows Forms Lab
 - Create a new Windows Forms application
 - Add a class Customer to it with Name, Address and City properties.
 - Add a new form to it called CustomerForm. Add TextBox components and Labels for each of the customer properties.
-- In the form class create a property with a getter that constructs a new Customer filling in the properties using the textboxes.
+- In the CustomerForm class create a property with a getter that constructs a new Customer filling in the properties using the textboxes.
 
 - In the main form add a button. In the click event handler create an instance of the form and show it using the ShowDialog method.
 - In the main form, get the customer information by reading the property in CustomerForm and display it using Label components
