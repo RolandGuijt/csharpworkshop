@@ -16,8 +16,8 @@ To learn interfaces and polymorphism we are creating a class that can launch obj
 - In Launch, set _CareerStarted.
 - Return a some number for MissionDurationInHours
 
-- Create a class LaunchEngine that has a private field, a List<ILaunchable>.
-- Add a method QueueLaunchable that accepts a ILaunchable
+- Create a class LaunchEngine that has a private field, a List<ILaunchable> called _Launchables.
+- Add a method QueueLaunchable that accepts an ILaunchable
 - Add a method LaunchAll that launches all rockets and returns the total mission duration of all launchables.
 
 - In program.cs create a user interface that can queue both launchables notifying the user that the launchable has been queued (using NameOfLaunchable). After the queuing is done, all launchables should be launched, displaying the total duration.
